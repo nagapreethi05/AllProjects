@@ -9,7 +9,7 @@ const AddBook = (Iprops: any) => {
     const [rating, setRating] = useState(0);
     const [price, setPrice] = useState(0);
     const [cover, setCover] = useState("");
-    const [description, setDescription] = useState("");
+    const [body, setDescription] = useState("");
     function inputtitle(e: any) {
         setTitle(e.target.value)
     }
@@ -39,7 +39,7 @@ const AddBook = (Iprops: any) => {
                     <label className="llabel" >Enter Price</label><input type="text" className="iinput" required onChange={inputprice}></input><br /><br />
                     <label className="llabel" >Enter Cover</label><input type="text" className="iinput" required onChange={inputcover}></input><br /><br />
                     <label className="llabel" >Enter Description</label><textarea className="iinput" required onChange={inputdescription}></textarea><br /><br />
-                    <button className="bbutton" type="button" onClick={() => Iprops.handleinput({ cover: cover, title: title, author: author, rating: rating, price: price, description: description })}>submit</button>
+                    <button className="bbutton" type="button" onClick={() => Iprops.handleinput({ cover: cover, title: title, author: author, rating: rating, price: price, body: body })}>submit</button>
                 </form>
             </span>
         </div>

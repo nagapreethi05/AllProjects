@@ -1,7 +1,7 @@
 import react from 'react'
 import {useParams} from 'react-router'
 import {book} from './book'
-import { Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 interface Iprops{
     list:book[],
@@ -20,8 +20,11 @@ const Details:react.FC<Iprops>=(props:Iprops)=>{
                     <h3><strong>Rating:</strong>{book.rating}</h3>
                     <h3><strong>Price:</strong>{book.price}</h3>
                     <p style={{textAlign:"left",fontSize:"20px"}}>Description:
-                    <p style={{lineHeight:"25px",textAlign:"justify"}}>{book.description}</p></p>
-                    <Button variant="danger" onClick={()=>props.delete(book.title)}>Delete</Button>
+                    <p style={{lineHeight:"25px",textAlign:"justify"}}>{book.body}</p></p>
+                    {/* //localstorage */}
+                    {/* <Button variant="danger" onClick={()=>props.delete(book.title)}>Delete</Button> */}
+                    {/* //mongooes */}
+                    <Button variant="danger" onClick={()=>props.delete(book._id)}>Delete</Button>
                 </div>
             )
         }

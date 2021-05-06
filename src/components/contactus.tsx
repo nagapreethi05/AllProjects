@@ -1,5 +1,6 @@
 import React from 'react';
-function ContactUs(){
+import Rainbow from '../hoc/Rainbow'
+const ContactUs=()=>{
     
     return(<>
         <div className="contactUs"><h3>Contact us</h3>
@@ -10,4 +11,4 @@ function ContactUs(){
 
     )
 }
-export default ContactUs
+export default Rainbow(ContactUs)

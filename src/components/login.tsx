@@ -1,8 +1,22 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-import { Navbar, Nav, Button,Col, Form, FormControl } from 'react-bootstrap';
+import { Button,Col, Form} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
-function Login() {
+interface Iprops {
+  handlelogin: (loginUser: any) => void
+  
+}
+const Login = (Iprops: any) => {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  
+  function inputlusername(e: any) {
+    setUserName(e.target.value)
+  }
+  function inputlpassword(e: any) {
+    setPassword(e.target.value)
+  }
+
 
     return (<>
         {/* <div className="login"><h3>Login</h3>
@@ -11,16 +25,16 @@ function Login() {
         Enter Password:<input type="text"></input><br /><br /></p> */}
 <Form>
   <Form.Group as={Col} controlId="formGridEmail">     
-    <Form.Label>Email </Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Label>User Name </Form.Label>
+    <Form.Control type="email" placeholder="Enter email" onChange={inputlusername}/>
   </Form.Group>
-  <Form.Group as={Col} controlId="formGridPassword">
+  <Form.Group as={Col} controlId="formGridPassword" >
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control type="password" placeholder="Password" onChange={inputlpassword}/>
   </Form.Group>
 </Form>
-        <Button variant="success">Login</Button>
-        
+        <Button variant="success" type="button" onClick={()=>Iprops.handlelogin({username:username,password:password})}>Login</Button>
+        {Iprops.valid==="error"?<div style={{color:"red"}}>invalid username or password</div>:null}
 
         {/* </div> */}
     </>
