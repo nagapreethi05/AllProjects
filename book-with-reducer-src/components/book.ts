@@ -1,0 +1,20 @@
+export class book{
+    cover:string;
+    title:string;
+    author:string;
+    price:number;
+    rating:number;
+    body:string;
+    id:any;
+constructor(cover:string,title:string,author:string,
+    price:number,
+    rating:number,
+    body:string,id:any){
+    this.cover=cover;
+    this.title=title;
+    this.author=author;
+    this.price=price;
+    this.rating=rating;
+    this.body=body
+}
+}
