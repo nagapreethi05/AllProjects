@@ -1,24 +1,19 @@
 //import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import React,{useContext} from 'react'
+import React from 'react'
 import { book } from './book';
 import OneBook from './OneBook';
 import Searching from './Search';
-import UserContext from './UserContext';
-interface booklistprops {
+
+interface props {
     list: book[]
 }
 
-const BookList: React.FC<booklistprops> = (props) => {
-    const {booksArray} =useContext(UserContext);
-    
-    let book = booksArray.map((book: any, index: any) => {
-        // console.log("from booklist")
-        // console.log(book.id)
+const BookList: React.FC<props> = (props: any) => {
+    let book = props.list.map((book: any, index: any) => {
         return (
             <div>
-                <Link to={`/${book.id}`}>
-                    
+                <Link to={`/${book.title}`}>
                     <OneBook book={book}></OneBook>
                 </Link>
             </div>
@@ -39,3 +34,29 @@ const BookList: React.FC<booklistprops> = (props) => {
 
 export default BookList
 
+// class BookList extends Component<Props> {
+
+//     render() {
+
+//             let book=this.props.list.map((book,index)=>{
+//                 return(
+//                     <div>
+//                         <Link to={`/${book.title}`}>
+//                     <OneBook book={book}></OneBook>
+//                     </Link>
+//                     </div>
+//                 )
+
+//             })   
+//             return (
+//             <div>
+//                 {book}
+//             </div>
+//         )
+//     }
+// }
+
+
+
+
+ //export default BookList
