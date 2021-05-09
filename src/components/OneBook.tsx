@@ -20,31 +20,7 @@ const OneBook = (props: Iprops) => {
                     </Card.Text></Card.Body>
 
             </Card>
-            {/* <div className="book">
-
-                <img className="bookimg" src={props.book.cover} title={props.book.title} />
-                <span>
-
-                    <h3 className="booktext"><b>Title:{props.book.title}</b></h3>
-                    <h3 className="booktext"><strong>Author:</strong>{props.book.author}</h3> */}
-            {/* <h3 className="booktext"><strong>Rating:</strong>{props.book.rating}</h3> */}
-            {/* <Star value={props.book.rating}></Star>
-                    <h3 className="booktext"><strong>Price:</strong>{props.book.price}</h3> */}
-            {/* <p className="bookp">Description:{props.book.description}</p> */}
-            {/* </span>
-            </div> */}
-
-            {/* <div className="card">
-                <div className="header">
-                    <p>The Header</p>
-                </div>
-                <div className="container">
-                    <p>Some random texts</p>
-                    <p>Yet another texts</p>
-                    <p>Even more texts</p>
-                    <p>I should probably make programming puns</p>
-                </div> */}
-            {/* </div> */}
+           
         </>
     )
 }
