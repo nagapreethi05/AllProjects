@@ -1,32 +1,34 @@
 // javascript for index.html
-const container = document.querySelector('.blogs');
+//to get books and search forms
+const container = document.querySelector('.books');
 const searchForm = document.querySelector('.search');
 
-const renderPosts = async (term) => {
+const renderBooks = async (term) => {
   console.log(term);
-  let uri = 'http://localhost:3000/posts?_sort=rating&_order=desc';
+  //to get in sorted rating order
+  let uri = 'http://localhost:3000/books?_sort=rating&_order=desc';
   if (term) {
     uri += `&q=${term}`
   }
 
   const res = await fetch(uri);
-  const posts = await res.json();
-  console.log(posts);
-
+  const books = await res.json();
+  console.log(books);
+//to display on page
   let template = '';
-  posts.forEach(post => {
+  books.forEach(book => {
     template += `
-      <div class="post">  
+      <div class="book">  
       <div>
-      <img  src="${post.cover}"</img>
+      <img  src="${book.cover}"</img>
       </div>
       <div class="booktext">
-        <h2>${post.title}</h2>
-        <h4>Author: ${post.author}</h4>
-        <p><b>Rating:</b>${post.rating}</p>
-        <p><small>${post.votes} votes,${post.pages} pages</small></p>
-        <p>${post.body.slice(0, 200)}...</p>
-        <a href="/details.html?id=${post.id}">Read more</a>
+        <h2>${book.title}</h2>
+        <h4>Author: ${book.author}</h4>
+        <p><b>Rating:</b>${book.rating}</p>
+        <p><small>${book.votes} votes,${book.pages} pages</small></p>
+        <p>${book.body.slice(0, 200)}...</p>
+        <a href="./details.html?id=${book.id}">Read more</a>
       </div>
       </div>
     `
@@ -38,7 +40,7 @@ const renderPosts = async (term) => {
 // search
 searchForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  renderPosts(searchForm.term.value.trim());
+  renderBooks(searchForm.term.value.trim());//trim is to remove white spaces
 })
 
-window.addEventListener('DOMContentLoaded', () => renderPosts());
+window.addEventListener('DOMContentLoaded', () => renderBooks());

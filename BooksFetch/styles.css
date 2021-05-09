@@ -38,24 +38,24 @@ textarea {
   min-height:200px;
 }
 
-/* post list */
-.post {
+/* book list */
+.book {
   padding: 16px;
   background: white;
   border-radius: 10px;
   margin: 20px 0;
   display: flex;
 }
-.post h2 {
+.book h2 {
   margin: 0;
 }
-.post p {
+.book p {
   margin-top: 0;
 }
-.post a {
+.book a {
   color: #36cca2;
 }
-.post img{
+.book img{
   width: 350px;
   height: 350px;
   flex: 1;
