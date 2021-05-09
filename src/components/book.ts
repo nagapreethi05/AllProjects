@@ -5,11 +5,11 @@ export class book{
     price:number;
     rating:number;
     body:string;
-    _id:any;
+    id:any;
 constructor(cover:string,title:string,author:string,
     price:number,
     rating:number,
-    body:string,_id:any){
+    body:string,id:any){
     this.cover=cover;
     this.title=title;
     this.author=author;
